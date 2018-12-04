@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+
+    android:background="@color/colorPrimary"
+    tools:context=".Fragments.registryFragment">
+  <include layout="@layout/toolicons"/>
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlack"
+        android:fontFamily="serif"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Titleregistry"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:mtf_labelColor="@color/colorBlack"
+        app:mtf_image="@drawable/user"
+        >
+
+        <EditText
+            android:id="@+id/editname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:imeOptions="actionDone"
+            android:maxLength="10"
+            android:hint="@string/hintRegistro"
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+           />
+
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <Button
+        android:id="@+id/btnListo"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/roundbutton"
+        android:text="@string/buttonregistry"
+        android:textColor="@color/colorBlack"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
