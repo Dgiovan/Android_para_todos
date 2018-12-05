@@ -7,9 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".MenuActivity">
 
+    <com.nightonke.boommenu.BoomMenuButton
+        android:id="@+id/bmb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:bmb_buttonEnum="simpleCircle"
+        app:bmb_piecePlaceEnum="piecePlace_dot_3_1"
+        app:bmb_buttonPlaceEnum="buttonPlace_sc_3_1"
+        />
 
-
-    <ScrollView
+   <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -117,13 +124,6 @@
 
 
     </ScrollView>
-    <com.nightonke.boommenu.BoomMenuButton
-        android:id="@+id/bmb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:bmb_piecePlaceEnum="piecePlace_dot_3_1"
-        app:bmb_buttonPlaceEnum="buttonPlace_sc_3_3"
-        />
 
 
 </LinearLayout>

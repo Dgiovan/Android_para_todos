@@ -19,8 +19,11 @@ import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
 import com.github.javiersantos.materialstyleddialogs.enums.Style;
+import com.nightonke.boommenu.BoomMenuButton;
 import com.serie.youtube.dagio.androidparatodos.MenuActivity;
 import com.serie.youtube.dagio.androidparatodos.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,6 +46,8 @@ public class registryFragment extends Fragment  {
     ImageView XMl,JAVA,GRADLE;
     EditText textname;
     Button   btnListo;
+    private BoomMenuButton bmb;
+    ArrayList<Integer> imageIDList;
 
 
 
