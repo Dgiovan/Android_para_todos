@@ -1,4 +1,4 @@
-package com.serie.youtube.dagio.androidparatodos;
+package com.serie.youtube.dagio.androidparatodos.Activitys;
 
 import android.net.Uri;
 import android.support.design.widget.FloatingActionButton;
@@ -23,6 +23,7 @@ import com.serie.youtube.dagio.androidparatodos.Fragments.intoGradleFragment;
 import com.serie.youtube.dagio.androidparatodos.Fragments.intoJavaFragment;
 import com.serie.youtube.dagio.androidparatodos.Fragments.intoXmlFragment;
 import com.serie.youtube.dagio.androidparatodos.Fragments.registryFragment;
+import com.serie.youtube.dagio.androidparatodos.R;
 
 public class contentActivity extends AppCompatActivity  implements intoGradleFragment.OnFragmentInteractionListener,intoJavaFragment.OnFragmentInteractionListener,intoXmlFragment.OnFragmentInteractionListener,registryFragment.OnFragmentInteractionListener{
 

@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".splashActivity">
+        <activity android:name=".Activitys.splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,10 +19,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".contentActivity"
+            android:name=".Activitys.contentActivity"
             android:label="@string/title_activity_content"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".Activitys.MenuActivity"></activity>
     </application>
 
 </manifest>

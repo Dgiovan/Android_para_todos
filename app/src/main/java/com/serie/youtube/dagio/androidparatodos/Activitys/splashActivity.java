@@ -1,9 +1,10 @@
-package com.serie.youtube.dagio.androidparatodos;
+package com.serie.youtube.dagio.androidparatodos.Activitys;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+
+import com.serie.youtube.dagio.androidparatodos.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

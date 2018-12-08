@@ -21,6 +21,10 @@
     <string name="Slidetocontinue">Desliza para continuar -></string>
     <string name="Actionbutton">Android para todos es una iniciativa interactiva para aprender android desarrollada por Gio :)</string>
 
+    <!--Text Fragmet Registro-->
+    <string name="genero">Elige tu genero</string>
+    <string name="he">Hombre</string>
+    <string name="she">Mujer</string>
 
     <!-- Text Toast-->
     <string name="toast_intro_btn">Por favor ingresa tu nombre</string>

@@ -1,6 +1,6 @@
-package com.serie.youtube.dagio.androidparatodos;
+package com.serie.youtube.dagio.androidparatodos.Activitys;
 
-import android.os.Build;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.nightonke.boommenu.BoomButtons.OnBMClickListener;
 import com.nightonke.boommenu.BoomButtons.SimpleCircleButton;
 import com.nightonke.boommenu.BoomMenuButton;
+import com.serie.youtube.dagio.androidparatodos.R;
 
 import java.util.ArrayList;
 
@@ -30,7 +31,6 @@ ArrayList<Integer> imageIDList;
 
 
 
-
         for (int i = 0; i < bmb.getPiecePlaceEnum().pieceNumber(); i++) {
             SimpleCircleButton.Builder builder = new SimpleCircleButton.Builder()
                     .listener(new OnBMClickListener() {
@@ -48,6 +48,7 @@ ArrayList<Integer> imageIDList;
 
                         }
                     })
+                    .pieceColor(Color.WHITE)
                     .normalImageRes(imageIDList.get(i));
 
             bmb.addBuilder(builder);

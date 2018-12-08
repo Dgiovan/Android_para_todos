@@ -1,27 +1,28 @@
 package com.serie.youtube.dagio.androidparatodos.Fragments;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.util.Xml;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.javiersantos.materialstyleddialogs.MaterialStyledDialog;
-import com.github.javiersantos.materialstyleddialogs.enums.Style;
 import com.nightonke.boommenu.BoomMenuButton;
-import com.serie.youtube.dagio.androidparatodos.MenuActivity;
+import com.serie.youtube.dagio.androidparatodos.Activitys.MenuActivity;
+import com.serie.youtube.dagio.androidparatodos.ConexionSQLiteHelper;
 import com.serie.youtube.dagio.androidparatodos.R;
+import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
 
 import java.util.ArrayList;
 
@@ -46,8 +47,9 @@ public class registryFragment extends Fragment  {
     ImageView XMl,JAVA,GRADLE;
     EditText textname;
     Button   btnListo;
-    private BoomMenuButton bmb;
-    ArrayList<Integer> imageIDList;
+    RadioButton he,she;
+    public static String genere;
+    public static String completado;
 
 
 
@@ -91,11 +93,16 @@ public class registryFragment extends Fragment  {
                              Bundle savedInstanceState) {
          View view = inflater.inflate(R.layout.fragment_registry, container, false);
 
+
         XMl= view.findViewById(R.id.iconXml);
         JAVA= view.findViewById(R.id.iconJava);
         GRADLE=view.findViewById(R.id.iconGradle);
         textname=view.findViewById(R.id.editname);
+        he=view.findViewById(R.id.Rhe);
+        she=view.findViewById(R.id.Rshe);
         btnListo=view.findViewById(R.id.btnListo);
+
+
 
 
 
@@ -145,9 +152,24 @@ public class registryFragment extends Fragment  {
         btnListo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (textname.getText().toString().equals("")) {
                     Toast.makeText(getContext(), R.string.toast_intro_btn, Toast.LENGTH_SHORT).show();
-                } else {
+                    Log.d("TAG","el usuario no ingreso su nombre");
+                }else if((he.isChecked()||she.isChecked())!=true)
+                {
+                      Toast.makeText(getContext(),"Por favor selecciona tu genero",Toast.LENGTH_SHORT).show();
+                    Log.d("TAG","el usuario no ingreso su genero");
+                }
+                else {
+                     completado="Realizado";
+                    if (he.isChecked()==true){
+                        genere="boy";
+                    }else if(she.isChecked()==true){
+                        genere="girl";
+                    }
+                    registrarusuario();
+                    Log.d("TAG","el usuario esta siendo registrado");
                     Intent intent = new Intent(getContext(), MenuActivity.class);
                     startActivity(intent);
 
@@ -155,6 +177,19 @@ public class registryFragment extends Fragment  {
             }
         });
         return view;
+    }
+
+    private void registrarusuario() {
+        //creando conexion con la base de datos
+        ConexionSQLiteHelper conn=new ConexionSQLiteHelper(getContext(),"bd_usuarios",null,1);
+        SQLiteDatabase db=conn.getWritableDatabase();
+        ContentValues values=new ContentValues();
+        values.put(Utilidades.CAMPO_NOMBRE,textname.getText().toString());
+        values.put(Utilidades.CAMPO_GENERO,genere);
+        values.put(Utilidades.CAMPO_TUTORIAL,completado);
+        Long nameResultante=db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_NOMBRE,values);
+        Toast.makeText(getContext(), "Bienvenido "+textname.getText().toString(), Toast.LENGTH_SHORT).show();
+        Log.d("TAG","usuario registrado en la base de datos");
     }
 
     // TODO: Rename method, update argument and hook method into UI event
