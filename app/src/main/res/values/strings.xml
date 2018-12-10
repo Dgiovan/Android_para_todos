@@ -21,6 +21,15 @@
     <string name="Slidetocontinue">Desliza para continuar -></string>
     <string name="Actionbutton">Android para todos es una iniciativa interactiva para aprender android desarrollada por Gio :)</string>
 
+    <!-- Text Fragments profiles-->
+    <string name="developerhe">Desarrollador:</string>
+    <string name="developershe">Desarrolladora:</string>
+    <string name="progresConcep">Conceptos básicos</string>
+    <string name="progresAndroid">IDE AndroidStudio</string>
+    <string name="progresElementos">Elementos gráficos</string>
+    <string name="progresAplicaciones">Aplicaciones</string>
+    <string name="backimage">Regresar</string>
+
     <!--Text Fragmet Registro-->
     <string name="genero">Elige tu genero</string>
     <string name="he">Hombre</string>
@@ -51,6 +60,9 @@
     <string name="Dialogintroxml">com.github.florent37.materialtextfield.MaterialTextField\nandroid:layout_marginTop="50dp"\nandroid:layout_gravity="center"\nandroid:layout_width="300dp"\android:layout_height="wrap_content"\napp:mtf_labelColor="@color/colorBlack"\napp:mtf_image="@drawable/user"\n>\nEditTextandroid:layout_width="match_parent"\nandroid:layout_height="wrap_content"\nandroid:hint="@string/hintRegistro"\nandroid:textColor="@color/colorBlack"\nandroid:textSize="15sp"\n/>\n/com.github.florent37.materialtextfield.MaterialTextField>\nButton\nandroid:layout_marginTop="100dp"\nandroid:layout_gravity="center"\nandroid:layout_marginLeft="20dp"\nandroid:background="@drawable/roundbutton"\nandroid:text="@string/buttonregistry"\nandroid:textColor="@color/colorBlack"\nandroid:layout_marginRight="20dp"\nandroid:layout_width="match_parent"\nandroid:layout_height="wrap_content" /></string>
     <string name="Dialogintrojava">Lo primero que hacemos  es el mapeo:\n\nEditText textname;\nButton   btnListo;\n\nDespues el casteo:\n\ntextname=view.findViewById(R.id.editname);\nbtnListo=view.findViewById(R.id.btnListo);\n\nPor ultimo tenemos nuestra logica:\n\nbtnListo.setOnClickListener(new View.OnClickListener() {\n@Override\npublic void onClick(View view) {\nif (textname.getText().toString().equals("")) {\nToast.makeText(getContext(), R.string.toast_intro_btn, Toast.LENGTH_SHORT).show();\n} else {\nIntent intent = new Intent(getContext(), MenuActivity.class);\nstartActivity(intent);\n}\n}\n});\n</string>
     <string name="Dialogintrogradle">Muy bien como vemos utilizamos una libreria para el EditText\nSolo tenemos que agregrar esta libreria:\n\nimplementation com.github.florent37:materialtextfield:1.0.7</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
