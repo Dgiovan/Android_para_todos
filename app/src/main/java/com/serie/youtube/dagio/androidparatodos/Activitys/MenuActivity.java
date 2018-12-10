@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,17 +21,21 @@ import com.nightonke.boommenu.BoomButtons.SimpleCircleButton;
 import com.nightonke.boommenu.BoomMenuButton;
 import com.serie.youtube.dagio.androidparatodos.ConexionSQLiteHelper;
 import com.serie.youtube.dagio.androidparatodos.Fragments.ProfileHe;
+import com.serie.youtube.dagio.androidparatodos.Fragments.profileHen;
+import com.serie.youtube.dagio.androidparatodos.Fragments.profileShe;
+import com.serie.youtube.dagio.androidparatodos.Fragments.registryFragment;
 import com.serie.youtube.dagio.androidparatodos.R;
 import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
 
 import java.util.ArrayList;
 
 
-public class MenuActivity extends AppCompatActivity  implements View.OnClickListener {
+public class MenuActivity extends AppCompatActivity implements profileHen.OnFragmentInteractionListener{
 
     //Elementos graficos
     TextView name;
     LinearLayout perfil;
+    LinearLayout contentmenu,contenthe,contentshe;
 
     //Boon Menu
     private BoomMenuButton bmb;
@@ -46,6 +51,26 @@ public class MenuActivity extends AppCompatActivity  implements View.OnClickList
         bmb=findViewById(R.id.bmb);
         name =findViewById(R.id.nameprofile);
         perfil=findViewById(R.id.Lprofile);
+        contentmenu=findViewById(R.id.contenedormenu);
+        contenthe=findViewById(R.id.contedorfragmenthe);
+        contentshe=findViewById(R.id.contedorfragmentshe);
+
+        //iniciadores de vista
+        contenthe.setVisibility(View.GONE);
+        contentmenu.setVisibility(View.VISIBLE);
+        contentshe.setVisibility(View.GONE);
+
+        //escuchadores
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                contenthe.setVisibility(View.VISIBLE);
+                contentmenu.setVisibility(View.GONE);
+                contentshe.setVisibility(View.GONE);
+
+
+            }
+        });
 
 
         imageIDList=new ArrayList<>();
@@ -101,16 +126,21 @@ public class MenuActivity extends AppCompatActivity  implements View.OnClickList
         imageIDList.add(R.drawable.gradlelogo);
     }
 
-
     @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+
+/*    @Override
     public void onClick(View view) {
         Intent intent=null;
         switch (view.getId()){
             case R.id.Lprofile :
-                intent= new Intent(MenuActivity.this,ProfileHe.class);
+                intent= new Intent(MenuActivity.this, ProfileHe.class);
                 startActivity(intent);
 
                 break;
         }
-    }
+    }*/
 }
