@@ -20,9 +20,8 @@ import com.nightonke.boommenu.BoomButtons.OnBMClickListener;
 import com.nightonke.boommenu.BoomButtons.SimpleCircleButton;
 import com.nightonke.boommenu.BoomMenuButton;
 import com.serie.youtube.dagio.androidparatodos.ConexionSQLiteHelper;
-import com.serie.youtube.dagio.androidparatodos.Fragments.ProfileHe;
 import com.serie.youtube.dagio.androidparatodos.Fragments.profileHen;
-import com.serie.youtube.dagio.androidparatodos.Fragments.profileShe;
+import com.serie.youtube.dagio.androidparatodos.Fragments.profileShen;
 import com.serie.youtube.dagio.androidparatodos.Fragments.registryFragment;
 import com.serie.youtube.dagio.androidparatodos.R;
 import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
@@ -30,7 +29,7 @@ import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
 import java.util.ArrayList;
 
 
-public class MenuActivity extends AppCompatActivity implements profileHen.OnFragmentInteractionListener{
+public class MenuActivity extends AppCompatActivity implements profileHen.OnFragmentInteractionListener,profileShen.OnFragmentInteractionListener {
 
     //Elementos graficos
     TextView name;
@@ -131,16 +130,4 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
 
     }
 
-
-/*    @Override
-    public void onClick(View view) {
-        Intent intent=null;
-        switch (view.getId()){
-            case R.id.Lprofile :
-                intent= new Intent(MenuActivity.this, ProfileHe.class);
-                startActivity(intent);
-
-                break;
-        }
-    }*/
 }

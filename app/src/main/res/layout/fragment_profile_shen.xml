@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/backgroundpink"
-    tools:context=".Fragments.profileShe">
-
+    tools:context=".Fragments.profileShen">
 
     <LinearLayout
         android:layout_marginLeft="40dp"
@@ -149,6 +148,7 @@
             />
 
     </LinearLayout>
+
 
 
 

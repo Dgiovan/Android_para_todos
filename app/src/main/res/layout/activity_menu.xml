@@ -24,9 +24,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <fragment
-android:name="com.serie.youtube.dagio.androidparatodos.Fragments.profileShe"        android:layout_width="match_parent"
+        android:name="com.serie.youtube.dagio.androidparatodos.Fragments.profileShen"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_profile_she"
+        tools:layout="@layout/fragment_profile_shen"
         />
 </LinearLayout>
 
