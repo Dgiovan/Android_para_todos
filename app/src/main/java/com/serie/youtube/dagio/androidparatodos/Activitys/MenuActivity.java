@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -22,7 +23,6 @@ import com.nightonke.boommenu.BoomMenuButton;
 import com.serie.youtube.dagio.androidparatodos.ConexionSQLiteHelper;
 import com.serie.youtube.dagio.androidparatodos.Fragments.profileHen;
 import com.serie.youtube.dagio.androidparatodos.Fragments.profileShen;
-import com.serie.youtube.dagio.androidparatodos.Fragments.registryFragment;
 import com.serie.youtube.dagio.androidparatodos.R;
 import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
 
@@ -34,6 +34,7 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
     //Elementos graficos
     TextView name;
     LinearLayout perfil;
+    ImageView she,he;
     LinearLayout contentmenu,contenthe,contentshe;
 
     //Boon Menu
@@ -42,6 +43,8 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
 
     //Conexion base de datos
     ConexionSQLiteHelper conn;
+    String genero="";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,43 +56,19 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
         contentmenu=findViewById(R.id.contenedormenu);
         contenthe=findViewById(R.id.contedorfragmenthe);
         contentshe=findViewById(R.id.contedorfragmentshe);
+        he=findViewById(R.id.imgprofileboy);
+        she=findViewById(R.id.imgprofiegirl);
 
         //iniciadores de vista
         contenthe.setVisibility(View.GONE);
         contentmenu.setVisibility(View.VISIBLE);
         contentshe.setVisibility(View.GONE);
 
-        //escuchadores
-        perfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                contenthe.setVisibility(View.VISIBLE);
-                contentmenu.setVisibility(View.GONE);
-                contentshe.setVisibility(View.GONE);
 
 
-            }
-        });
-
-
+        //inicializacion parametros boom menu
         imageIDList=new ArrayList<>();
         setInitialData();
-
-        conn=new ConexionSQLiteHelper(getApplicationContext(),"bd_usuarios",null,1);
-        SQLiteDatabase db=conn.getReadableDatabase();
-        String [] nombreusuario={Utilidades.CAMPO_NOMBRE};
-        try {
-
-            Cursor cursor =db.query(Utilidades.TABLA_USUARIO,nombreusuario, String.valueOf(1),null,null,null,null);
-            cursor.moveToFirst();
-            name.setText(cursor.getString(0));
-            cursor.close();
-
-        }catch (Exception e){
-            Log.e("TAG","Algo esta mal con la basede datos");
-        }
-
-
 
         //metodo para boom menu
 
@@ -116,6 +95,62 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
             bmb.addBuilder(builder);
 
         }
+
+
+
+
+
+        conn=new ConexionSQLiteHelper(getApplicationContext(),"bd_usuarios",null,1);
+        SQLiteDatabase db=conn.getReadableDatabase();
+        String [] nombreusuario={Utilidades.CAMPO_NOMBRE,Utilidades.CAMPO_GENERO};
+        try {
+
+            Cursor cursor =db.query(Utilidades.TABLA_USUARIO,nombreusuario, String.valueOf(1),null,null,null,null);
+            cursor.moveToFirst();
+            name.setText(cursor.getString(0));
+            genero=(cursor.getString(1));
+
+            cursor.close();
+
+        }catch (Exception e){
+            Log.e("TAG","Algo esta mal con la basede datos");
+        }
+
+
+
+
+
+        if (genero.equals("boy")){
+            he.setVisibility(View.VISIBLE);
+            she.setVisibility(View.GONE);
+        }else if (genero.equals("girl")){
+            he.setVisibility(View.GONE);
+            she.setVisibility(View.VISIBLE);
+        }
+
+
+        //escuchadores
+        perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (he.getVisibility()){
+                    case View.VISIBLE:
+                        contenthe.setVisibility(View.VISIBLE);
+                        contentmenu.setVisibility(View.GONE);
+                        contentshe.setVisibility(View.GONE);
+                        break;
+                    case View.GONE:
+                        contenthe.setVisibility(View.GONE);
+                        contentmenu.setVisibility(View.GONE);
+                        contentshe.setVisibility(View.VISIBLE);
+                        break;
+                }
+
+
+
+            }
+        });
+
 
     }
 
