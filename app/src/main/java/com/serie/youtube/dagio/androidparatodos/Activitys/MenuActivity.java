@@ -29,11 +29,11 @@ import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
 import java.util.ArrayList;
 
 
-public class MenuActivity extends AppCompatActivity implements profileHen.OnFragmentInteractionListener,profileShen.OnFragmentInteractionListener {
+public class MenuActivity extends AppCompatActivity implements profileHen.OnFragmentInteractionListener,profileShen.OnFragmentInteractionListener, View.OnClickListener {
 
     //Elementos graficos
     TextView name;
-    LinearLayout perfil;
+    LinearLayout perfil,conceptos,ide,cgraficos,apps,librerias,tips;
     ImageView she,he;
     LinearLayout contentmenu,contenthe,contentshe;
 
@@ -50,20 +50,39 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        //Elementos
         bmb=findViewById(R.id.bmb);
         name =findViewById(R.id.nameprofile);
-        perfil=findViewById(R.id.Lprofile);
+        he=findViewById(R.id.imgprofileboy);
+        she=findViewById(R.id.imgprofiegirl);
+
+        //Layouts Targets
+        perfil= findViewById(R.id.Lprofile);
+        conceptos= findViewById(R.id.Lconcept);
+        ide= findViewById(R.id.Lide);
+        cgraficos= findViewById(R.id.Lgraphics);
+        apps= findViewById(R.id.Lapps);
+        librerias= findViewById(R.id.Lboockstore);
+        tips= findViewById(R.id.Lpersonalitation);
+
+        //Visibilidades
         contentmenu=findViewById(R.id.contenedormenu);
         contenthe=findViewById(R.id.contedorfragmenthe);
         contentshe=findViewById(R.id.contedorfragmentshe);
-        he=findViewById(R.id.imgprofileboy);
-        she=findViewById(R.id.imgprofiegirl);
 
         //iniciadores de vista
         contenthe.setVisibility(View.GONE);
         contentmenu.setVisibility(View.VISIBLE);
         contentshe.setVisibility(View.GONE);
 
+        //onclicks
+        perfil.setOnClickListener(this);
+        conceptos.setOnClickListener(this);
+        ide.setOnClickListener(this);
+        cgraficos.setOnClickListener(this);
+        apps.setOnClickListener(this);
+        librerias.setOnClickListener(this);
+        tips.setOnClickListener(this);
 
 
         //inicializacion parametros boom menu
@@ -128,30 +147,6 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
             she.setVisibility(View.VISIBLE);
         }
 
-
-        //escuchadores
-        perfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                switch (he.getVisibility()){
-                    case View.VISIBLE:
-                        contenthe.setVisibility(View.VISIBLE);
-                        contentmenu.setVisibility(View.GONE);
-                        contentshe.setVisibility(View.GONE);
-                        break;
-                    case View.GONE:
-                        contenthe.setVisibility(View.GONE);
-                        contentmenu.setVisibility(View.GONE);
-                        contentshe.setVisibility(View.VISIBLE);
-                        break;
-                }
-
-
-
-            }
-        });
-
-
     }
 
     private void setInitialData() {
@@ -165,4 +160,44 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
 
     }
 
+    @Override
+    public void onClick(View view) {
+        Intent intent=null;
+        switch (view.getId())
+        {
+            case R.id.Lprofile:
+                switch (he.getVisibility()){
+                    case View.VISIBLE:
+                        contenthe.setVisibility(View.VISIBLE);
+                        contentmenu.setVisibility(View.GONE);
+                        contentshe.setVisibility(View.GONE);
+                        break;
+                    case View.GONE:
+                        contenthe.setVisibility(View.GONE);
+                        contentmenu.setVisibility(View.GONE);
+                        contentshe.setVisibility(View.VISIBLE);
+                        break;
+                }
+                break;
+            case R.id.Lconcept:
+                Toast.makeText(this, "conceptos", Toast.LENGTH_SHORT).show();
+                break;
+            case  R.id.Lide:
+                Toast.makeText(this, "ide", Toast.LENGTH_SHORT).show();
+                break;
+            case  R.id.Lgraphics:
+                Toast.makeText(this, "elementos", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.Lapps:
+                Toast.makeText(this, "apps", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.Lboockstore:
+                Toast.makeText(this, "Librerias", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.Lpersonalitation:
+                Toast.makeText(this, "tips", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+    }
 }

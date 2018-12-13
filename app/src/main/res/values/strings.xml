@@ -4,13 +4,21 @@
 
     <!--Text Splash Activitys-->
 
-    <string name="Confianza_txt">Concejos\n\n
+    <string name="Confianza_txt">Consejos\n\n
         Tutoriales\n\n
         Conceptos\n\n
         Y Mas..</string>
     <string name="title_activity_content">contentActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <!--Text  Activitys MENU activity-->
+    <string name="Target_concept">Conceptos Basicos</string>
+    <string name="Target_IDE">Un Vistaso:\nAndroid Studio</string>
+    <string name="Target_graphic">Elementos De Una Apliacion</string>
+    <string name="Target_apps">Aplicaciones</string>
+    <string name="Target_bookstores">Librerias y dependencias</string>
+    <string name="Target_personalization">Consejos y Personalizacíon</string>
 
     <!-- Text Fragments-->
 
