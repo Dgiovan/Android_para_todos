@@ -19,13 +19,14 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.serie.youtube.dagio.androidparatodos.Fragments.intoBoom;
 import com.serie.youtube.dagio.androidparatodos.Fragments.intoGradleFragment;
 import com.serie.youtube.dagio.androidparatodos.Fragments.intoJavaFragment;
 import com.serie.youtube.dagio.androidparatodos.Fragments.intoXmlFragment;
 import com.serie.youtube.dagio.androidparatodos.Fragments.registryFragment;
 import com.serie.youtube.dagio.androidparatodos.R;
 
-public class contentActivity extends AppCompatActivity  implements intoGradleFragment.OnFragmentInteractionListener,intoJavaFragment.OnFragmentInteractionListener,intoXmlFragment.OnFragmentInteractionListener,registryFragment.OnFragmentInteractionListener{
+public class contentActivity extends AppCompatActivity  implements intoBoom.OnFragmentInteractionListener,intoGradleFragment.OnFragmentInteractionListener,intoJavaFragment.OnFragmentInteractionListener,intoXmlFragment.OnFragmentInteractionListener,registryFragment.OnFragmentInteractionListener{
 
     /**
      * 4555 1030 0760 1951
@@ -117,13 +118,15 @@ public class contentActivity extends AppCompatActivity  implements intoGradleFra
         public static Fragment newInstance(int sectionNumber) {
          Fragment fragment=null;
          switch (sectionNumber){
-             case 1: fragment=new intoXmlFragment();
+             case 1: fragment=new intoBoom();
+                 break;
+             case 2: fragment=new intoXmlFragment();
              break;
-             case 2: fragment=new intoJavaFragment();
+             case 3: fragment=new intoJavaFragment();
              break;
-             case 3: fragment=new intoGradleFragment();
+             case 4: fragment=new intoGradleFragment();
              break;
-             case 4: fragment=new registryFragment();
+             case 5: fragment=new registryFragment();
              break;
          }
             return fragment;
@@ -159,7 +162,7 @@ public class contentActivity extends AppCompatActivity  implements intoGradleFra
         @Override
         public int getCount() {
             // Show 4 total pages.
-            return 4;
+            return 5;
         }
     }
 }

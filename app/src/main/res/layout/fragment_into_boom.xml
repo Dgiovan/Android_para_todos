@@ -5,15 +5,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Fragments.intoGradleFragment"
+    tools:context=".Fragments.intoBoom"
     android:background="@color/colorPrimary">
 
-  <ImageView
-      android:layout_gravity="center"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:src="@drawable/gradlelogo"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dpng"/>
     <TextView
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:fontFamily="monospace"
@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:text="@string/intoGradle"/>
+        android:text="@string/initintro"/>
+
 
 </LinearLayout>

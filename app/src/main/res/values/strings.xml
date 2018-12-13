@@ -25,6 +25,7 @@
     <string name="intoXML">Presiona este icono para poder ver cómo está declarado en el XML.\n\nRecuerda XML es la parte visual para el usuario.</string>
     <string name="intoJAVA">Presiona este icono para poder ver cómo está declarado en el Java.\n\nRecuerda Java es la logica de nuestra aplicación.</string>
     <string name="intoGradle">Presiona este icono para poder ver que libreria se usa en el Gradle.</string>
+    <string name="initintro">Encontraras este icono en algunas partes al presionarlo saldran otros iconos que te ayudaran a entender el mundo de android\n\nApartir de aqui desliza hasta terminar el tutorial</string>
     <string name="Titleregistry">Comencemos a explorar Android</string>
     <string name="Slidetocontinue">Desliza para continuar -></string>
     <string name="Actionbutton">Android para todos es una iniciativa interactiva para aprender android desarrollada por Gio :)</string>
