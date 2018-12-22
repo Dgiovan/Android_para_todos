@@ -2,6 +2,8 @@ package com.serie.youtube.dagio.androidparatodos.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,9 +12,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.serie.youtube.dagio.androidparatodos.Activitys.MenuActivity;
+import com.serie.youtube.dagio.androidparatodos.ConexionSQLiteHelper;
 import com.serie.youtube.dagio.androidparatodos.R;
+import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +38,11 @@ public class profileShen extends Fragment {
     private String mParam1;
     private String mParam2;
     ImageView back;
+    TextView name;
+    ProgressBar profile,concep,ide,element,apps;
 
+    //conexiion base de datos
+   ConexionSQLiteHelper conn;
     private OnFragmentInteractionListener mListener;
 
     public profileShen() {
@@ -71,6 +81,15 @@ public class profileShen extends Fragment {
                              Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_profile_shen, container, false);
 
+        //progressbar
+        profile=view.findViewById(R.id.Pbprofileshe);
+        concep=view.findViewById(R.id.Pbconceptoshe);
+        ide=view.findViewById(R.id.Pbideshe);
+        element=view.findViewById(R.id.Pbelementoshe);
+        apps=view.findViewById(R.id.Pbaplicacioneshe);
+
+        name=view.findViewById(R.id.nameshe);
+
         back=view.findViewById(R.id.imgbackshe);
         // Inflate the layout for this fragment
 
@@ -83,6 +102,31 @@ public class profileShen extends Fragment {
             }
         });
         Log.d("PANTALLAS","fragment perfil mujer");
+
+        //Consulta de la base de datos :)
+        conn = new ConexionSQLiteHelper(getContext(),"bd_usuarios",null,1);
+        SQLiteDatabase db=conn.getReadableDatabase();
+
+        String perfil[]={Utilidades.CAMPO_NOMBRE,
+                Utilidades.CAMPO_CONCEPTOS,
+                Utilidades.CAMPO_IDEAN,
+                Utilidades.CAMPO_ELEMENTOS,
+                Utilidades.CAMPO_APPS};
+        try {
+            Cursor cursor= db.query(Utilidades.TABLA_USUARIO,perfil,String.valueOf(1),null,null,null,null);
+            cursor.moveToFirst();
+
+            name.setText(cursor.getString(0));
+            concep.setProgress(Integer.parseInt(cursor.getString(1)));
+            ide.setProgress(Integer.parseInt(cursor.getString(2)));
+            element.setProgress(Integer.parseInt(cursor.getString(3)));
+            apps.setProgress(Integer.parseInt(cursor.getString(4)));
+
+        }catch (Exception e){
+            Log.e("TAG","LA consuta para perfil fallo");
+        }
+
+
         return view;
     }
 

@@ -2,6 +2,8 @@ package com.serie.youtube.dagio.androidparatodos.Fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,9 +14,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.serie.youtube.dagio.androidparatodos.Activitys.MenuActivity;
+import com.serie.youtube.dagio.androidparatodos.ConexionSQLiteHelper;
 import com.serie.youtube.dagio.androidparatodos.R;
+import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,9 +40,14 @@ public class profileHen extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-    ProgressBar profile;
+    ProgressBar profile,concep,ide,element,apps;
     ImageView back;
-    LinearLayout contentmenu,contenthe,contentshe;
+    TextView name;
+    LinearLayout contentmenu,contenthe;
+
+    //Conexion con la base de datos
+    ConexionSQLiteHelper conn;
+
 
     public profileHen() {
         // Required empty public constructor
@@ -75,10 +85,19 @@ public class profileHen extends Fragment {
                              Bundle savedInstanceState) {
 
         View view= inflater.inflate(R.layout.fragment_profile_hen, container, false);
+
+       //progress bar
         profile= view.findViewById(R.id.profile);
+        concep=view.findViewById(R.id.Pbconceptos);
+        ide=view.findViewById(R.id.Pbide);
+        element=view.findViewById(R.id.Pbelementos);
+        apps=view.findViewById(R.id.Pbaplicaciones);
+
         back= view.findViewById(R.id.imgback);
         contentmenu=view.findViewById(R.id.contenedormenu);
         contenthe=view.findViewById(R.id.contedorfragmenthe);
+
+        name=view.findViewById(R.id.namehe);
         // Inflate the layout for this fragment
 
         back.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +112,30 @@ public class profileHen extends Fragment {
 
         profile.setProgress(20);
         Log.d("PANTALLAS","fragment perfil hombre");
+
+
+        //Consulta de la base de datos :)
+        conn = new ConexionSQLiteHelper(getContext(),"bd_usuarios",null,1);
+        SQLiteDatabase db=conn.getReadableDatabase();
+
+        String perfil[]={Utilidades.CAMPO_NOMBRE,
+                        Utilidades.CAMPO_CONCEPTOS,
+                        Utilidades.CAMPO_IDEAN,
+                        Utilidades.CAMPO_ELEMENTOS,
+                        Utilidades.CAMPO_APPS};
+        try {
+            Cursor cursor= db.query(Utilidades.TABLA_USUARIO,perfil,String.valueOf(1),null,null,null,null);
+            cursor.moveToFirst();
+
+            name.setText(cursor.getString(0));
+            concep.setProgress(Integer.parseInt(cursor.getString(1)));
+            ide.setProgress(Integer.parseInt(cursor.getString(2)));
+            element.setProgress(Integer.parseInt(cursor.getString(3)));
+            apps.setProgress(Integer.parseInt(cursor.getString(4)));
+
+        }catch (Exception e){
+            Log.e("TAG","LA consuta para perfil fallo");
+        }
         return view;
         // Inflate the layout for this fragmen
     }

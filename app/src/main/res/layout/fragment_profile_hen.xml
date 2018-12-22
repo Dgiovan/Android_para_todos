@@ -85,6 +85,7 @@
             android:layout_height="wrap_content"
             android:text="@string/progresConcep"/>
         <ProgressBar
+            android:id="@+id/Pbconceptos"
             style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -104,6 +105,7 @@
             android:layout_height="wrap_content"
             android:text="@string/progresAndroid"/>
         <ProgressBar
+            android:id="@+id/Pbide"
             style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -121,6 +123,7 @@
             android:layout_height="wrap_content"
             android:text="@string/progresElementos"/>
         <ProgressBar
+            android:id="@+id/Pbelementos"
             style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -138,6 +141,7 @@
             android:layout_height="wrap_content"
             android:text="@string/progresAplicaciones"/>
         <ProgressBar
+            android:id="@+id/Pbaplicaciones"
             style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
