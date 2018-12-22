@@ -19,9 +19,6 @@ public class splashActivity extends AppCompatActivity {
 
     private static final long SPLASH=4000;
 
-    //Conexion base de datos
-    ConexionSQLiteHelper conn;
-    String tutorial="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,36 +32,18 @@ public class splashActivity extends AppCompatActivity {
             public void run() {
                 Intent intent=null;
 
-                if (tutorial.equals("Realizado")){
-                    intent=new Intent(splashActivity.this,MenuActivity.class);
-                    startActivity(intent);
-                    finish();
-                }else{
+
                     intent=new Intent(splashActivity.this,contentActivity.class);
                     startActivity(intent);
                     finish();
-                }
+
 
             }
         };   /* Definiendo el Tiempo a traves del long*/
     Timer timer = new Timer();
     timer.schedule(task,SPLASH);
 
-        conn=new ConexionSQLiteHelper(getApplicationContext(),"bd_usuarios",null,1);
-        SQLiteDatabase db=conn.getReadableDatabase();
-        String [] nombreusuario={Utilidades.CAMPO_NOMBRE,Utilidades.CAMPO_GENERO};
-        try {
 
-            Cursor cursor =db.query(Utilidades.TABLA_USUARIO,nombreusuario, String.valueOf(0),null,null,null,null);
-            cursor.moveToFirst();
-
-            tutorial=(cursor.getString(0));
-
-            cursor.close();
-
-        }catch (Exception e){
-            Log.e("TAG","Algo esta mal con la basede datos");
-        }
 
 
 

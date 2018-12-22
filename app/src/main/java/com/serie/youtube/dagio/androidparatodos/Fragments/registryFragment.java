@@ -186,7 +186,11 @@ public class registryFragment extends Fragment  {
         ContentValues values=new ContentValues();
         values.put(Utilidades.CAMPO_NOMBRE,textname.getText().toString());
         values.put(Utilidades.CAMPO_GENERO,genere);
-        values.put(Utilidades.CAMPO_TUTORIAL,completado);
+        values.put(Utilidades.CAMPO_CONCEPTOS,"0");
+        values.put(Utilidades.CAMPO_IDEAN,"0");
+        values.put(Utilidades.CAMPO_ELEMENTOS,"0");
+        values.put(Utilidades.CAMPO_APPS,"0");
+
         Long nameResultante=db.insert(Utilidades.TABLA_USUARIO,Utilidades.CAMPO_NOMBRE,values);
         Toast.makeText(getContext(), "Bienvenido "+textname.getText().toString(), Toast.LENGTH_SHORT).show();
         Log.d("TAG","usuario registrado en la base de datos");
