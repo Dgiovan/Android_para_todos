@@ -176,6 +176,7 @@ public class registryFragment extends Fragment  {
                 }
             }
         });
+        Log.d("PANTALLAS","fragment Registro");
         return view;
     }
 

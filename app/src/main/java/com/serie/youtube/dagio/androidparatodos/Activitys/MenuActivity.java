@@ -44,11 +44,6 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
     //Conexion base de datos
     ConexionSQLiteHelper conn;
     String genero="";
-    String conceptosap="";
-    String idean="";
-    String elementos="";
-    String appss="";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -125,29 +120,19 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
 
         conn=new ConexionSQLiteHelper(getApplicationContext(),"bd_usuarios",null,1);
         SQLiteDatabase db=conn.getReadableDatabase();
-        String [] nombreusuario={Utilidades.CAMPO_NOMBRE,Utilidades.CAMPO_GENERO,Utilidades.CAMPO_CONCEPTOS,Utilidades.CAMPO_IDEAN,Utilidades.CAMPO_ELEMENTOS,Utilidades.CAMPO_CONCEPTOS};
+        String [] nombreusuario={Utilidades.CAMPO_NOMBRE,Utilidades.CAMPO_GENERO};
         try {
 
             Cursor cursor =db.query(Utilidades.TABLA_USUARIO,nombreusuario, String.valueOf(1),null,null,null,null);
             cursor.moveToFirst();
             name.setText(cursor.getString(0));
             genero=(cursor.getString(1));
-            conceptosap=(cursor.getString(2));
-            idean=(cursor.getString(3));
-            elementos=(cursor.getString(4));
-            appss=(cursor.getString(5));
 
             cursor.close();
-
+             Log.i("TAG","Consulta de datos exitosa los datos son:"+name+genero);
         }catch (Exception e){
             Log.e("TAG","Algo esta mal con la basede datos");
         }
-
-         Log.d("DATOSconeptos",conceptosap);
-        Log.d("DATOSide",idean);
-        Log.d("DATOSelementos",elementos);
-        Log.d("DATOSapps",appss);
-
 
 
         if (genero.equals("boy")){
@@ -157,7 +142,7 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
             he.setVisibility(View.GONE);
             she.setVisibility(View.VISIBLE);
         }
-
+     Log.d("PANTALLAS","pantalla menu");
     }
 
     private void setInitialData() {

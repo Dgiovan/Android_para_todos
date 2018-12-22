@@ -45,7 +45,7 @@ public class splashActivity extends AppCompatActivity {
 
 
 
-
+        Log.d("PANTALLAS","pantalla spash");
 
 
 
