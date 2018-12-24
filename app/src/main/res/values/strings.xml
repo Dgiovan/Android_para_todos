@@ -72,6 +72,15 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_conceptos_conten">conceptosConten</string>
+    <string name="tab_text_1">aplicacion</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="title_activity_content_id">contentID</string>
+    <string name="title_activity_content_elements">contentElements</string>
+    <string name="title_activity_content_apss">contentApss</string>
+    <string name="title_activity_content_library">contentLibrary</string>
+    <string name="title_activity_conten_tips">contenTips</string>
 
 
 </resources>

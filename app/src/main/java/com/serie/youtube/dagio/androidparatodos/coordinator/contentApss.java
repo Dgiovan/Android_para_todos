@@ -1,6 +1,7 @@
-package com.serie.youtube.dagio.androidparatodos.Activitys;
+package com.serie.youtube.dagio.androidparatodos.coordinator;
 
 import android.net.Uri;
+import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -19,17 +20,14 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-import com.serie.youtube.dagio.androidparatodos.Fragments.intoBoom;
-import com.serie.youtube.dagio.androidparatodos.Fragments.intoGradleFragment;
-import com.serie.youtube.dagio.androidparatodos.Fragments.intoJavaFragment;
-import com.serie.youtube.dagio.androidparatodos.Fragments.intoXmlFragment;
-import com.serie.youtube.dagio.androidparatodos.Fragments.registryFragment;
+import com.serie.youtube.dagio.androidparatodos.Fragments.Contents.appOne;
+import com.serie.youtube.dagio.androidparatodos.Fragments.Contents.appThre;
+import com.serie.youtube.dagio.androidparatodos.Fragments.Contents.appTwo;
 import com.serie.youtube.dagio.androidparatodos.R;
 
-public class contentActivity extends AppCompatActivity  implements intoBoom.OnFragmentInteractionListener,intoGradleFragment.OnFragmentInteractionListener,intoJavaFragment.OnFragmentInteractionListener,intoXmlFragment.OnFragmentInteractionListener,registryFragment.OnFragmentInteractionListener{
+public class contentApss extends AppCompatActivity implements appOne.OnFragmentInteractionListener,appTwo.OnFragmentInteractionListener,appThre.OnFragmentInteractionListener {
 
     /**
-     * 4555 1030 0760 1951
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
      * {@link FragmentPagerAdapter} derivative, which will keep every
@@ -47,10 +45,10 @@ public class contentActivity extends AppCompatActivity  implements intoBoom.OnFr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_content);
+        setContentView(R.layout.activity_content_apss);
 
-       /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);*/
-        /*setSupportActionBar(toolbar);*/
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -59,11 +57,16 @@ public class contentActivity extends AppCompatActivity  implements intoBoom.OnFr
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, R.string.Actionbutton, Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -74,7 +77,7 @@ public class contentActivity extends AppCompatActivity  implements intoBoom.OnFr
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_content, menu);
+        getMenuInflater().inflate(R.menu.menu_content_apss, menu);
         return true;
     }
 
@@ -116,26 +119,23 @@ public class contentActivity extends AppCompatActivity  implements intoBoom.OnFr
          * number.
          */
         public static Fragment newInstance(int sectionNumber) {
-         Fragment fragment=null;
-         switch (sectionNumber){
-             case 1: fragment=new intoBoom();
+         Fragment fragment =null;
+             switch (sectionNumber){
+                 case 1: fragment=new appOne();
                  break;
-             case 2: fragment=new intoXmlFragment();
-             break;
-             case 3: fragment=new intoJavaFragment();
-             break;
-             case 4: fragment=new intoGradleFragment();
-             break;
-             case 5: fragment=new registryFragment();
-             break;
-         }
+                 case 2: fragment=new appTwo();
+                 break;
+                 case 3: fragment=new appThre();
+                 break;
+             }
+
             return fragment;
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_content, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_content_apss, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
@@ -161,8 +161,8 @@ public class contentActivity extends AppCompatActivity  implements intoBoom.OnFr
 
         @Override
         public int getCount() {
-            // Show 4 total pages.
-            return 5;
+            // Show 3 total pages.
+            return 3;
         }
     }
 }

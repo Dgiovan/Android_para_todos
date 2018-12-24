@@ -1,16 +1,12 @@
 package com.serie.youtube.dagio.androidparatodos.Activitys;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
-import com.serie.youtube.dagio.androidparatodos.ConexionSQLiteHelper;
 import com.serie.youtube.dagio.androidparatodos.R;
-import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
+import com.serie.youtube.dagio.androidparatodos.coordinator.contentActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;

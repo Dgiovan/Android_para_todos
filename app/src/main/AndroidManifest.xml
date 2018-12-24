@@ -19,10 +19,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activitys.contentActivity"
+            android:name=".coordinator.contentActivity"
             android:label="@string/title_activity_content"
             android:theme="@style/AppTheme" />
-        <activity android:name=".Activitys.MenuActivity"></activity>
+        <activity android:name=".Activitys.MenuActivity" />
+        <activity
+            android:name=".coordinator.conceptosConten"
+            android:label="@string/title_activity_conceptos_conten"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".coordinator.contentID"
+            android:label="@string/title_activity_content_id"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".coordinator.contentElements"
+            android:label="@string/title_activity_content_elements"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".coordinator.contentApss"
+            android:label="@string/title_activity_content_apss"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".coordinator.contentLibrary"
+            android:label="@string/title_activity_content_library"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".coordinator.contenTips"
+            android:label="@string/title_activity_conten_tips"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

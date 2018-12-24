@@ -25,6 +25,12 @@ import com.serie.youtube.dagio.androidparatodos.Fragments.profileHen;
 import com.serie.youtube.dagio.androidparatodos.Fragments.profileShen;
 import com.serie.youtube.dagio.androidparatodos.R;
 import com.serie.youtube.dagio.androidparatodos.Utilidades.Utilidades;
+import com.serie.youtube.dagio.androidparatodos.coordinator.conceptosConten;
+import com.serie.youtube.dagio.androidparatodos.coordinator.contenTips;
+import com.serie.youtube.dagio.androidparatodos.coordinator.contentApss;
+import com.serie.youtube.dagio.androidparatodos.coordinator.contentElements;
+import com.serie.youtube.dagio.androidparatodos.coordinator.contentID;
+import com.serie.youtube.dagio.androidparatodos.coordinator.contentLibrary;
 
 import java.util.ArrayList;
 
@@ -176,22 +182,34 @@ public class MenuActivity extends AppCompatActivity implements profileHen.OnFrag
                 }
                 break;
             case R.id.Lconcept:
-                Toast.makeText(this, "conceptos", Toast.LENGTH_SHORT).show();
+                 intent = new Intent(MenuActivity.this,conceptosConten.class);
+                 startActivity(intent);
+                 finish();
                 break;
             case  R.id.Lide:
-                Toast.makeText(this, "ide", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MenuActivity.this,contentID.class);
+                startActivity(intent);
+                finish();
                 break;
             case  R.id.Lgraphics:
-                Toast.makeText(this, "elementos", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MenuActivity.this,contentElements.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.Lapps:
-                Toast.makeText(this, "apps", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MenuActivity.this,contentApss.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.Lboockstore:
-                Toast.makeText(this, "Librerias", Toast.LENGTH_SHORT).show();
+                intent = new Intent(MenuActivity.this,contentLibrary.class);
+                startActivity(intent);
+                finish();
                 break;
             case R.id.Lpersonalitation:
-                Toast.makeText(this, "tips", Toast.LENGTH_SHORT).show();
+                intent= new Intent(MenuActivity.this,contenTips.class);
+                startActivity(intent);
+                finish();
                 break;
         }
 

@@ -1,0 +1,1 @@
+Una App es una aplicación de software que se instala en dispositivos móviles o tablets para ayudar al usuario en una labor concreta, ya sea de carácter profesional o de ocio y entretenimiento, a diferencia de una webapp que no es instalable.
