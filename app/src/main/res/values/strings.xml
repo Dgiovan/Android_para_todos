@@ -44,6 +44,11 @@
     <string name="he">Hombre</string>
     <string name="she">Mujer</string>
 
+    <!--Text Fragmet Conceptos-->
+
+    <string name="titlesapp">Que es una aplicacion</string>
+    <string name="titletapps">Tipos de aplicaiones</string>
+
     <!-- Text Toast-->
     <string name="toast_intro_btn">Por favor ingresa tu nombre</string>
 

@@ -1,0 +1,27 @@
+﻿   WEB:
+
+Aplicaciones web enfocadas a dispositivos móbiles.
+Desarrolladas en HTML, CSS, JavaScript.
+Se ejecutan en el navegador del dispositivo.
+Ventajas:
+multiplataforma
+Desarrollo fácil y económico a comparación de otros
+Desventajas:
+Conexión a internet
+Menor rendimiento
+Recursos limitados.
+
+    NATIVAS:
+
+Específicas para dispositivos hacen uso de un SDK
+Ventajas
+Tiendas
+Aprovecha recursos
+Mejor Experiencia de usuario
+Desventajas
+No es multiplataforma
+Mayor tiempo de desarrollo
+
+    HIBRIDAS:
+
+Aplicaciones que conbinan el funcionamiento de la web e internos del dispositivo
