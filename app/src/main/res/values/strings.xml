@@ -48,6 +48,12 @@
 
     <string name="titlesapp">Que es una aplicacion</string>
     <string name="titletapps">Tipos de aplicaiones</string>
+       <!--conceptos tabla-->
+    <string name="titletab">Etapas de desarrollo de aplicaciones</string>
+    <string name="tabConceptualizacion">Conceptualización</string>
+    <string name="tabConcept">Idea de la aplicación - idea - investigación - formalización de la idea</string>
+    
+
 
     <!-- Text Toast-->
     <string name="toast_intro_btn">Por favor ingresa tu nombre</string>

@@ -3,9 +3,11 @@ package com.serie.youtube.dagio.androidparatodos.Fragments;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -53,6 +55,10 @@ public class registryFragment extends Fragment  {
 
 
 
+    //base de datos
+    Context context = getActivity();
+    SharedPreferences SharedPrefe;
+    SharedPreferences.Editor editor;
 
 
     private OnFragmentInteractionListener mListener;
@@ -152,6 +158,7 @@ public class registryFragment extends Fragment  {
         btnListo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Tcompletado();
 
                 if (textname.getText().toString().equals("")) {
                     Toast.makeText(getContext(), R.string.toast_intro_btn, Toast.LENGTH_SHORT).show();
@@ -178,6 +185,15 @@ public class registryFragment extends Fragment  {
         });
         Log.d("PANTALLAS","fragment Registro");
         return view;
+    }
+
+    private void Tcompletado() {
+
+        SharedPreferences sharedPreferences = PreferenceManager
+                .getDefaultSharedPreferences(getContext());
+        SharedPreferences.Editor editor =sharedPreferences.edit();
+        editor.putString("Tutorial","Completado");
+        editor.apply();
     }
 
     private void registrarusuario() {
