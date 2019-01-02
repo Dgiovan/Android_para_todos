@@ -107,16 +107,42 @@
                 android:orientation="vertical"
                 android:background="@drawable/roundlayout"
                 >
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/titletab"
+                    android:textSize="20sp"/>
                 <LinearLayout
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/roundscuare">
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp" />
+                    <TextView
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/tabConceptualizacion"
+                        android:textSize="18sp"/>
+                    <TextView
+                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorWhite"
+                        android:text="@string/tabConcept"
+                        android:textSize="18sp"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -125,24 +151,58 @@
                     <LinearLayout
                         android:layout_weight="2"
                         android:layout_marginLeft="10dp"
-
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/roundscuare">
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp" />
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tabDefnicion"
+                            android:layout_marginBottom="4dp"
+                            />
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorWhite"
+                            android:text="@string/tabDefni"
+                            android:textSize="15sp"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_weight="2"
-
+                        android:orientation="vertical"
                         android:layout_marginRight="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/roundscuare">
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp" />
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tabDiseño"
+                            android:layout_marginBottom="4dp"
+                            />
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginBottom="21dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorWhite"
+                            android:text="@string/tabDise"
+                            android:textSize="15sp"/>
                     </LinearLayout>
                 </LinearLayout>
                 <LinearLayout
@@ -153,31 +213,85 @@
                     <LinearLayout
                         android:layout_weight="2"
                         android:layout_marginLeft="10dp"
-
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/roundscuare">
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp" />
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tabDesarrollo"
+                            android:layout_marginBottom="4dp"
+                            />
+                        <TextView
+                            android:gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorWhite"
+                            android:text="@string/tabDesar"
+                            android:textSize="15sp"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_weight="2"
-
+                        android:orientation="vertical"
                         android:layout_marginRight="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/roundscuare">
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp" />
+                        <TextView
+                            android:layout_marginTop="5dp"
+                            android:layout_gravity="center"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorWhite"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tabPublicacion"
+                            android:layout_marginBottom="4dp"
+                            />
+                        <TextView
+                             android:layout_gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginBottom="40dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorWhite"
+                            android:text="@string/tabPubli"
+
+                            android:textSize="15sp"/>
                     </LinearLayout>
                 </LinearLayout>
 
-
             </LinearLayout>
-
             <!--/layouts tablas-->
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/roundsecond">
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"
+                    android:text="@string/titlerept"/>
+                <ImageView
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/reptrabajo"/>
+            </LinearLayout>
         </LinearLayout>
 
 

@@ -48,12 +48,20 @@
 
     <string name="titlesapp">Que es una aplicacion</string>
     <string name="titletapps">Tipos de aplicaiones</string>
-       <!--conceptos tabla-->
+                      <!--conceptos tabla-->
     <string name="titletab">Etapas de desarrollo de aplicaciones</string>
     <string name="tabConceptualizacion">Conceptualización</string>
     <string name="tabConcept">Idea de la aplicación - idea - investigación - formalización de la idea</string>
-    
-
+    <string name="tabDefnicion">Definición</string>
+    <string name="tabDefni">definir funcionalidad\nusuarios a los que va dirigida\nalcance</string>
+    <string name="tabDesarrollo">Desarrollo</string>
+    <string name="tabDesar">vida de los diseños\nfuncionalidad\npruebas y depuración de errores</string>
+    <string name="tabDiseño">Diseño</string>
+    <string name="tabDise">uso de prototipos\nuso de programas para el diseño</string>
+    <string name="tabPublicacion">Publicación</string>
+    <string name="tabPubli">uso de las tiendas\nmárquetin</string>
+                    <!--/conceptos tabla-->
+    <string name="titlerept">Reparticíon de trabajo</string>
 
     <!-- Text Toast-->
     <string name="toast_intro_btn">Por favor ingresa tu nombre</string>
