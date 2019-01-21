@@ -1,0 +1,22 @@
+﻿Intent es un objeto de acción que puedes usar para solicitar una acción de otro componente de la aplicación.
+
+Casos de uso fundamentales:
+
+Para comenzar una actividad:
+
+Una Activity representa una única pantalla en una aplicación. Puedes iniciar una nueva instancia de una Activity pasando una Intent a startActivity().
+
+Para iniciar un servicio:
+
+Un Service es un componente que realiza operaciones en segundo plano sin una interfaz de usuario. Puede iniciar un servicio para realizar una operación única (como descargar un archivo) pasando una Intent a startService().
+
+Para entregar un mensaje:
+
+Un mensaje es un aviso que cualquier aplicación puede recibir. El sistema entrega varios mensajes de eventos del sistema, como cuando el sistema arranca o el dispositivo comienza a cargarse. Puedes enviar un mensaje a otras apps pasando una Intent a sendBroadcast(), sendOrderedBroadcast() o sendStickyBroadcast().
+
+
+
+Figura 1: Ilustración de la forma en que se entrega una intent implícita mediante el sistema para iniciar otra actividad. 
+[1] La actividad A crea una Intent con una descripción de acción y la pasa a startActivity().
+[2] El sistema Android busca en todas las apps un filtro de intents que coincida con la intent. Cuando se encuentra una coincidencia.
+[3] el sistema inicia la actividad coincidente (actividad B) invocando su método onCreate() y pasándolo a la Intent. 

@@ -4,11 +4,15 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.serie.youtube.dagio.androidparatodos.R;
+
+import java.io.InputStream;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +31,8 @@ public class contenTwo extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    TextView activitytext,intenttext,broadcasttext;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,8 +70,59 @@ public class contenTwo extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_conten_two, container, false);
+        View view=inflater.inflate(R.layout.fragment_conten_two, container, false);
+        activitytext=view.findViewById(R.id.textActivity);
+        intenttext= view.findViewById(R.id.Intenttext);
+        broadcasttext= view.findViewById(R.id.broadcastext);
+
+
+        String setTextaap= null;
+        String setTextaap1 = null;
+        String setTextapp2= null;
+
+
+        try {
+            InputStream is = getActivity().getAssets().open("Activitytext.txt");
+            int size= is.available();
+            byte[] buffer=new  byte[size];
+            is.read(buffer);
+            is.close();
+            setTextaap=new String(buffer);
+        }catch (Exception ex){
+            ex.printStackTrace();
+            Log.d("Texto",ex.toString());
+
+        }
+        try {
+            InputStream is =getActivity().getAssets().open("IntentText.txt");
+            int size=is.available();
+            byte[] buffer= new byte[size];
+            is.read(buffer);
+            is.close();
+            setTextaap1=new String(buffer);
+
+        }catch (Exception ex)
+        {
+            ex.printStackTrace();
+            Log.d("Texto",ex.toString());
+        }
+        try {
+            InputStream is =getActivity().getAssets().open("BroadcastReceiverText.txt");
+            int size=is.available();
+            byte[] buffer= new byte[size];
+            is.read(buffer);
+            is.close();
+            setTextapp2=new String(buffer);
+
+        }catch (Exception ex)
+        {
+            ex.printStackTrace();
+            Log.d("Texto",ex.toString());
+        }
+        broadcasttext.setText(setTextapp2);
+        intenttext.setText(setTextaap1);
+        activitytext.setText(setTextaap);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

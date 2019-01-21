@@ -1,0 +1,11 @@
+﻿Podemos decir que todas las pantallas de una aplicación son una “activity”.
+Las activities están conformadas por dos partes: la parte lógica(programacion) y la parte gráfica(Diseño).
+
+Java:
+La parte lógica es una archivo .java que es la clase que se crea para poder manipular, interactuar y colocar el código de esa actividad.
+
+Grafica:
+La parte gráfica es un XML que tiene todos los elementos que estamos viendo de una pantalla declarados con etiquetas parecidas a las del HTML, es decir, que el diseño de una aplicación en Android se hace similar a una página web; XML es un primo de HTML.
+
+Resumiendo
+Una actividad está conformada por la parte lógica (un archivo Java) y la parte gráfica (un archivo XML). 

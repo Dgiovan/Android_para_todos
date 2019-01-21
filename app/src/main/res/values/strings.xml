@@ -61,6 +61,12 @@
     <string name="tabPublicacion">Publicación</string>
     <string name="tabPubli">uso de las tiendas\nmárquetin</string>
                     <!--/conceptos tabla-->
+    <string name="titleConceptos">Conceptos basicos</string>
+    <string name="Activitytitle">Activity</string>
+    <string name="Intenttitle">Intents y filtros de intents</string>
+    <string name="BroadcastReceivertitle">BroadcastReceiver</string>
+
+
     <string name="titlerept">Reparticíon de trabajo</string>
 
     <!-- Text Toast-->
@@ -92,8 +98,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_conceptos_conten">conceptosConten</string>
-    <string name="tab_text_1">aplicacion</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">Aplicaciones</string>
+    <string name="tab_text_2">Conceptos</string>
     <string name="tab_text_3">Tab 3</string>
     <string name="title_activity_content_id">contentID</string>
     <string name="title_activity_content_elements">contentElements</string>

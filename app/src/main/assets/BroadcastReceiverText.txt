@@ -1,0 +1,21 @@
+﻿BroadcastReceiver
+
+Un BroadcastReceiver es un componente Android que permite el registro de eventos del sistema.
+Todos los Receivers registrados para un evento serán notificados por Android una vez que éstos ocurran.
+
+Implementación
+
+Un BroadcastReceiver extiende de la clase BroadcastReceiver y es registrado como un receptor en una aplicación a través del fichero AndroidManifest.xml
+
+Alternativamente a este tipo de registro, podemos registrar un BroadcastReceiver dinámicamente a través del método Context.registerReceiver()
+Si el evento para el que el BroadcastReceiver recibe BroadcastIntents desde el sistema Android entonces usamos el método onReceive()
+
+Envío de Broadcast Intents
+
+El método sendBroadcast() permite enviar BroadcastIntents. No se pueden desencadenar emisiones del sistema, el sistema Android evitará esto.
+Pero sí podemos definir intent-filters para nuestras propias acciones y hacerlas funcionar desde el método sendBroadcast().
+
+System broadcasts
+
+Varios eventos del sistema son definidos como campos final statics en la clase Intent. Otras clases del sistema Android también definen eventos como el TelephonyManager que define eventos para el cambio del estado del teléfono.
+La siguiente tabla lista algunos eventos importantes del sistema.
