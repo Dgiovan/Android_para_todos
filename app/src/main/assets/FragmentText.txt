@@ -1,0 +1,23 @@
+﻿Fragment 
+
+Un Fragment representa un comportamiento o una parte de la interfaz de usuario en una Activity.
+Puedes pensar en un fragmento como una sección modular de una actividad que tiene su ciclo de vida propio, recibe sus propios eventos de entrada y que puedes agregar o quitar mientras la actividad se esté ejecutando (algo así como una "subactividad" que puedes volver a usar en diferentes actividades).
+
+Un fragmento siempre debe estar integrado a una actividad y el ciclo de vida del fragmento se ve directamente afectado por el ciclo de vida de la actividad anfitriona
+
+Android introduce los fragmentos en Android 3.0 (nivel de API 11), principalmente para admitir diseños de IU más dinámicos y flexibles en pantallas grandes, como las de las tablets. 
+
+Debes diseñar cada fragmento como un componente modular y reutilizable de la actividad. Como cada fragmento define su propio diseño y su propio comportamiento con sus propios callbacks del ciclo de vida, puedes incluir un fragmento en múltiples actividades; por lo tanto, debes diseñarlo para volver a utilizarlo y evitar la manipulación directa de un fragmento desde otro fragmento.
+
+
+DialogFragment
+
+    Muestra un diálogo flotante. Usar esta clase para crear un diálogo es una buena alternativa al uso de métodos del asistente de diálogos en la clase Activity, ya que puedes incorporar un diálogo del fragmento en la pila de actividades de fragmentos administrados por la actividad, lo que le permite al usuario volver a un fragmento descartado.
+
+ListFragment
+
+    Muestra una lista de elementos administrados por un adaptador (como un SimpleCursorAdapter, al igual que ListActivity. Proporciona varios métodos para administrar una vista de lista, como el callback onListItemClick() para manipular eventos de clic.
+
+PreferenceFragment
+
+    Muestra una jerarquía de objetos Preference en forma de lista, al igual que PreferenceActivity. Esto resulta útil para crear una actividad "configuración" para tu aplicación. 

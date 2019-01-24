@@ -181,14 +181,14 @@
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Aqui va ir fragment"
+                    android:text="@string/Fragmenttitle"
                     android:textColor="@color/colorBlack"
                     android:textSize="16sp"/>
                 <TextView
+                    android:id="@+id/fragmenttext"
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ksdjcdhsbjbsdj"
                     android:textSize="14sp"
                     android:textColor="@color/colorBlack"/>
 

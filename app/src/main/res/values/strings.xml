@@ -65,6 +65,7 @@
     <string name="Activitytitle">Activity</string>
     <string name="Intenttitle">Intents y filtros de intents</string>
     <string name="BroadcastReceivertitle">BroadcastReceiver</string>
+    <string name="Fragmenttitle">Fragments</string>
 
 
     <string name="titlerept">Reparticíon de trabajo</string>

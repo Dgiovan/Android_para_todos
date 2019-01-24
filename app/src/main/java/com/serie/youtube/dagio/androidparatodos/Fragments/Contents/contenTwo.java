@@ -31,7 +31,7 @@ public class contenTwo extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    TextView activitytext,intenttext,broadcasttext;
+    TextView activitytext,intenttext,broadcasttext,fragmenttext;
 
 
     private OnFragmentInteractionListener mListener;
@@ -74,11 +74,14 @@ public class contenTwo extends Fragment {
         activitytext=view.findViewById(R.id.textActivity);
         intenttext= view.findViewById(R.id.Intenttext);
         broadcasttext= view.findViewById(R.id.broadcastext);
+        fragmenttext= view.findViewById(R.id.fragmenttext);
 
 
         String setTextaap= null;
         String setTextaap1 = null;
         String setTextapp2= null;
+        String setTextapp3=null;
+
 
 
         try {
@@ -119,6 +122,20 @@ public class contenTwo extends Fragment {
             ex.printStackTrace();
             Log.d("Texto",ex.toString());
         }
+        try {
+            InputStream is =getActivity().getAssets().open("FragmentText.txt");
+            int size=is.available();
+            byte[] buffer= new byte[size];
+            is.read(buffer);
+            is.close();
+            setTextapp3=new String(buffer);
+
+        }catch (Exception ex)
+        {
+            ex.printStackTrace();
+            Log.d("Texto",ex.toString());
+        }
+        fragmenttext.setText(setTextapp3);
         broadcasttext.setText(setTextapp2);
         intenttext.setText(setTextaap1);
         activitytext.setText(setTextaap);
